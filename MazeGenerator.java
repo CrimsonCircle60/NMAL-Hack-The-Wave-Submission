@@ -62,4 +62,3 @@ public class MazeGenerator {
 		MazeGenerator maze = new MazeGenerator(n, m, start, end);
 	}
 }
-//This code is contributed by Akash Jha
