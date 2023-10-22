@@ -21,5 +21,7 @@ public class Array {
             }
         }
         return new int[] { -1, -1 };
-    } 
+    }
+    
+    public static boolean inBounds
 }
