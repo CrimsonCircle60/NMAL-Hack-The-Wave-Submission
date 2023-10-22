@@ -1,4 +1,5 @@
-import StdDraw;
+import static StdDraw.*;
+import stddraw.StdDraw;
 
 public class Maze {
     private final int cols, rows;   // dimension of maze

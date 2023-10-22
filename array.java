@@ -1,25 +1,25 @@
+import java.util.Arrays;
+ 
 public class Array {
-    public int[][] maze1 = new int[4][7]; 
-    public int[][] maze2 = {
-        {0, 2, 0, 0, 0, 0, 0},
-        {0, 1, 0, 0, 1, 1, 3},
-        {0, 1, 1, 1, 1, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0}
-    };
-
     public static void main(String[] args) {
-        int[][] map = {
-            {0, 2, 0, 0, 0, 0, 0},
-            {0, 1, 0, 0, 1, 1, 3},
-            {0, 1, 1, 1, 1, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0}
-        };
-        for(int i=0; i < map.length; i++) {
-           
-            for(int j=0; j < map[i].length; j++) {
-                System.out.print(map[i][j] + ' ');
-            } 
-        }
+        int arr[][] = { { 0, 2, 0, 0, 0, 0, 0 },
+                        { 0, 1, 0, 0, 1, 1, 3 },
+                        { 0, 1, 1, 1, 1, 0, 0 },
+                        { 0, 0, 0, 0, 0, 0, 0 } };
+        int target = 2;
+        int ans[] = linearSearch(arr, target);
+        System.out.println("Element found at index: "
+                           + Arrays.toString(ans));
     }
+ 
+    public static int[] linearSearch(int[][] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] == target) {
+                    return new int[] { i, j };
+                }
+            }
+        }
+        return new int[] { -1, -1 };
+    } 
 }
-
