@@ -5,8 +5,8 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 
 
-public class DrawRect extends JPanel {
-   private static final int RECT_X = 250;
+public class DrawRect1 extends JPanel {
+   private static final int RECT_X = 20;
    private static final int RECT_Y = RECT_X;
    private static final int RECT_WIDTH = 100;
    private static final int RECT_HEIGHT = RECT_WIDTH;
@@ -29,9 +29,9 @@ public class DrawRect extends JPanel {
 
    // create the GUI explicitly on the Swing event thread
    private static void createAndShowGui() {
-      DrawRect mainPanel = new DrawRect();
+      DrawRect1 mainPanel = new DrawRect1();
 
-      JFrame frame = new JFrame("DrawRect");
+      JFrame frame = new JFrame("DrawRect1");
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.getContentPane().add(mainPanel);
       frame.pack();
