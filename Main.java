@@ -61,6 +61,7 @@ public class Main extends javax.swing.JPanel implements ActionListener, MouseLis
         
         if (direction == 4) {
 
+            
             // Tier 3 Wierdos
             if (!Maze.inBounds(locationRow + 3, locationCol - 3, maze.maze2) || maze.maze2[locationRow + 3][locationCol - 3] == 0) {
                 g.setColor(new Color(50, 50, 50));
@@ -92,7 +93,18 @@ public class Main extends javax.swing.JPanel implements ActionListener, MouseLis
             }
 
             // Tier 2 Wierdos
-
+            if (!Maze.inBounds(locationRow + 2, locationCol - 2, maze.maze2) || maze.maze2[locationRow + 2][locationCol - 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {0, 3 * width / 13, 3 * width / 13, 0, 0};
+                int[] y = {height / 4, 3 * height / 8, 5 * height / 8, 3 * height / 4, height / 4};
+                g.fillPolygon(x, y, 5);
+            }
+            if (!Maze.inBounds(locationRow + 2, locationCol + 2, maze.maze2) || maze.maze2[locationRow + 2][locationCol + 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {10 * width / 13, width, width, 10 * height / 13, 10 * height / 13};
+                int[] y = {3 * height / 8, height / 4, 3 * height / 4, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+            }
             
 
             // Tier 3 Normals
@@ -152,12 +164,330 @@ public class Main extends javax.swing.JPanel implements ActionListener, MouseLis
                 int[] y = {height / 4, 0, height, 3 * height / 4, height / 4};
                 g.fillPolygon(x, y, 5);
             }
+
+
         } else if (direction == 2) {
 
+
+            // Tier 3 Wierdos
+            if (!Maze.inBounds(locationRow + 3, locationCol - 3, maze.maze2) || maze.maze2[locationRow + 3][locationCol - 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {0, 1 * width / 13, 1 * width / 13, 0, 0};
+                int[] y = {3 * height / 8, 7 * height / 16, 9 * height / 16, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(0, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow + 2, locationCol - 3, maze.maze2) || maze.maze2[locationRow + 2][locationCol - 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {3 * width / 13, 4 * width / 13, 4 * width / 13, 3 * width / 13, 3 * width / 13};
+                int[] y = {3 * height / 8, 7 * height / 16, 9 * height / 16, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(height / 13, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow - 3, locationCol - 3, maze.maze2) || maze.maze2[locationRow - 3][locationCol - 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {12 * width / 13, width, width, 12 * height / 13, 12 * height / 13};
+                int[] y = {7 * height / 16, 3 * height / 8, 5 * height / 8, 9 * height / 16, 7 * height / 16};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(width, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow - 2, locationCol - 3, maze.maze2) || maze.maze2[locationRow - 2][locationCol - 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {9 * width / 13, 10 * width / 13, 10 * width / 13, 9 * height / 13, 9 * height / 13};
+                int[] y = {7 * height / 16, 3 * height / 8, 5 * height / 8, 9 * height / 16, 7 * height / 16};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(10 * width / 13, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+
+            // Tier 2 Wierdos
+            if (!Maze.inBounds(locationRow + 2, locationCol - 2, maze.maze2) || maze.maze2[locationRow + 2][locationCol - 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {0, 3 * width / 13, 3 * width / 13, 0, 0};
+                int[] y = {height / 4, 3 * height / 8, 5 * height / 8, 3 * height / 4, height / 4};
+                g.fillPolygon(x, y, 5);
+            }
+            if (!Maze.inBounds(locationRow - 2, locationCol - 2, maze.maze2) || maze.maze2[locationRow - 2][locationCol - 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {10 * width / 13, width, width, 10 * height / 13, 10 * height / 13};
+                int[] y = {3 * height / 8, height / 4, 3 * height / 4, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+            }
+            
+
+            // Tier 3 Normals
+            if (!Maze.inBounds(locationRow, locationCol - 3, maze.maze2) || maze.maze2[locationRow][locationCol - 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                g.fillRect(width/2 - 3 * width / 26, height / 2 - height / 8, 3 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow + 1, locationCol - 3, maze.maze2) || maze.maze2[locationRow + 1][locationCol - 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {5 * width / 13, 6 * width / 13, 6 * width / 13, 5 * width / 13, 5 * width / 13};
+                int[] y = {3 * height / 8, 7 * height / 16, 9 * height / 16, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(3 * width / 13, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow - 1, locationCol - 3, maze.maze2) || maze.maze2[locationRow - 1][locationCol - 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {7 * width / 13, 8 * width / 13, 8 * width / 13, 7 * width / 13, 7 * width / 13};
+                int[] y = {7 * height / 16, 3 * height / 8, 5 * height / 8, 9 * height / 16, 7 * height / 16};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(10 * width / 13, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+
+            // Tier 2 Normals
+            if (!Maze.inBounds(locationRow, locationCol - 2, maze.maze2) || maze.maze2[locationRow][locationCol - 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                g.fillRect(3 * width / 13, height / 4, 7 * width / 13, height / 2);
+            }
+            if (!Maze.inBounds(locationRow + 1, locationCol - 2, maze.maze2) || maze.maze2[locationRow + 1][locationCol - 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {3 * width / 13, 5 * width / 13, 5 * width / 13, 3 * width / 13, 3 * width / 13};
+                int[] y = {height / 4, 3 * height / 8, 5 * height / 8, 3 * height / 4, height / 4};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(0, height / 4, 3 * width / 13, height / 2);
+            }
+            if (!Maze.inBounds(locationRow - 1, locationCol - 2, maze.maze2) || maze.maze2[locationRow - 1][locationCol - 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {8 * width / 13, 10 * width / 13, 10 * width / 13, 8 * height / 13, 8 * height / 13};
+                int[] y = {3 * height / 8, height / 4, 3 * height / 4, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(10 * width / 13, height / 4, 3 * height / 13, height / 2);
+            }
+
+            // Tier 1 Normals
+            if (!Maze.inBounds(locationRow, locationCol - 1, maze.maze2) || maze.maze2[locationRow][locationCol - 1] == 0) {
+                g.setColor(new Color(150, 150, 150));
+                g.fillRect(0, 0, width, height);
+            }
+            if (!Maze.inBounds(locationRow + 1, locationCol - 1, maze.maze2) || maze.maze2[locationRow + 1][locationCol - 1] == 0) {
+                g.setColor(new Color(150, 150, 150));
+                int[] x = {0, 3 * width / 13, 3 * width / 13, 0, 0};
+                int[] y = {0, height / 4, 3 * height / 4, height, 0};
+                g.fillPolygon(x, y, 5);
+            }
+            if (!Maze.inBounds(locationRow - 1, locationCol - 1, maze.maze2) || maze.maze2[locationRow - 1][locationCol - 1] == 0) {
+                g.setColor(new Color(150, 150, 150));
+                int[] x = {10 * width / 13, width, width, 10 * width / 13, 10 * width / 13};
+                int[] y = {height / 4, 0, height, 3 * height / 4, height / 4};
+                g.fillPolygon(x, y, 5);
+            }
+            
+
+        } else if (direction == 1) {
+            
+
+            // Tier 3 Wierdos
+            if (!Maze.inBounds(locationRow - 3, locationCol + 3, maze.maze2) || maze.maze2[locationRow - 3][locationCol + 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {0, 1 * width / 13, 1 * width / 13, 0, 0};
+                int[] y = {3 * height / 8, 7 * height / 16, 9 * height / 16, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(0, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow - 3, locationCol + 2, maze.maze2) || maze.maze2[locationRow - 3][locationCol + 2] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {3 * width / 13, 4 * width / 13, 4 * width / 13, 3 * width / 13, 3 * width / 13};
+                int[] y = {3 * height / 8, 7 * height / 16, 9 * height / 16, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(height / 13, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow - 3, locationCol - 3, maze.maze2) || maze.maze2[locationRow - 3][locationCol - 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {12 * width / 13, width, width, 12 * height / 13, 12 * height / 13};
+                int[] y = {7 * height / 16, 3 * height / 8, 5 * height / 8, 9 * height / 16, 7 * height / 16};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(width, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow - 3, locationCol - 2, maze.maze2) || maze.maze2[locationRow - 3][locationCol - 2] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {9 * width / 13, 10 * width / 13, 10 * width / 13, 9 * height / 13, 9 * height / 13};
+                int[] y = {7 * height / 16, 3 * height / 8, 5 * height / 8, 9 * height / 16, 7 * height / 16};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(10 * width / 13, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+
+            // Tier 2 Wierdos
+            if (!Maze.inBounds(locationRow - 2, locationCol + 2, maze.maze2) || maze.maze2[locationRow - 2][locationCol + 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {0, 3 * width / 13, 3 * width / 13, 0, 0};
+                int[] y = {height / 4, 3 * height / 8, 5 * height / 8, 3 * height / 4, height / 4};
+                g.fillPolygon(x, y, 5);
+            }
+            if (!Maze.inBounds(locationRow - 2, locationCol - 2, maze.maze2) || maze.maze2[locationRow - 2][locationCol - 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {10 * width / 13, width, width, 10 * height / 13, 10 * height / 13};
+                int[] y = {3 * height / 8, height / 4, 3 * height / 4, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+            }
+            
+
+            // Tier 3 Normals
+            if (!Maze.inBounds(locationRow - 3, locationCol, maze.maze2) || maze.maze2[locationRow - 3][locationCol] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                g.fillRect(width/2 - 3 * width / 26, height / 2 - height / 8, 3 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow - 3, locationCol + 1, maze.maze2) || maze.maze2[locationRow - 3][locationCol + 1] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {5 * width / 13, 6 * width / 13, 6 * width / 13, 5 * width / 13, 5 * width / 13};
+                int[] y = {3 * height / 8, 7 * height / 16, 9 * height / 16, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(3 * width / 13, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow - 3, locationCol - 1, maze.maze2) || maze.maze2[locationRow - 3][locationCol - 1] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {7 * width / 13, 8 * width / 13, 8 * width / 13, 7 * width / 13, 7 * width / 13};
+                int[] y = {7 * height / 16, 3 * height / 8, 5 * height / 8, 9 * height / 16, 7 * height / 16};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(10 * width / 13, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+
+            // Tier 2 Normals
+            if (!Maze.inBounds(locationRow - 2, locationCol, maze.maze2) || maze.maze2[locationRow - 2][locationCol] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                g.fillRect(3 * width / 13, height / 4, 7 * width / 13, height / 2);
+            }
+            if (!Maze.inBounds(locationRow - 2, locationCol + 1, maze.maze2) || maze.maze2[locationRow - 2][locationCol + 1] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {3 * width / 13, 5 * width / 13, 5 * width / 13, 3 * width / 13, 3 * width / 13};
+                int[] y = {height / 4, 3 * height / 8, 5 * height / 8, 3 * height / 4, height / 4};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(0, height / 4, 3 * width / 13, height / 2);
+            }
+            if (!Maze.inBounds(locationRow - 2, locationCol - 1, maze.maze2) || maze.maze2[locationRow - 2][locationCol - 1] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {8 * width / 13, 10 * width / 13, 10 * width / 13, 8 * height / 13, 8 * height / 13};
+                int[] y = {3 * height / 8, height / 4, 3 * height / 4, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(10 * width / 13, height / 4, 3 * height / 13, height / 2);
+            }
+
+            // Tier 1 Normals
+            if (!Maze.inBounds(locationRow - 1, locationCol, maze.maze2) || maze.maze2[locationRow - 1][locationCol] == 0) {
+                g.setColor(new Color(150, 150, 150));
+                g.fillRect(0, 0, width, height);
+            }
+            if (!Maze.inBounds(locationRow - 1, locationCol + 1, maze.maze2) || maze.maze2[locationRow - 1][locationCol + 1] == 0) {
+                g.setColor(new Color(150, 150, 150));
+                int[] x = {0, 3 * width / 13, 3 * width / 13, 0, 0};
+                int[] y = {0, height / 4, 3 * height / 4, height, 0};
+                g.fillPolygon(x, y, 5);
+            }
+            if (!Maze.inBounds(locationRow - 1, locationCol - 1, maze.maze2) || maze.maze2[locationRow - 1][locationCol - 1] == 0) {
+                g.setColor(new Color(150, 150, 150));
+                int[] x = {10 * width / 13, width, width, 10 * width / 13, 10 * width / 13};
+                int[] y = {height / 4, 0, height, 3 * height / 4, height / 4};
+                g.fillPolygon(x, y, 5);
+            }
+
+
         } else if (direction == 3) {
+            
 
-        } else if (direction == 4) {
+            // Tier 3 Wierdos
+            if (!Maze.inBounds(locationRow - 3, locationCol + 3, maze.maze2) || maze.maze2[locationRow - 3][locationCol + 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {0, 1 * width / 13, 1 * width / 13, 0, 0};
+                int[] y = {3 * height / 8, 7 * height / 16, 9 * height / 16, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(0, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow - 2, locationCol + 3, maze.maze2) || maze.maze2[locationRow + 2][locationCol - 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {3 * width / 13, 4 * width / 13, 4 * width / 13, 3 * width / 13, 3 * width / 13};
+                int[] y = {3 * height / 8, 7 * height / 16, 9 * height / 16, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(height / 13, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow + 3, locationCol + 3, maze.maze2) || maze.maze2[locationRow + 3][locationCol + 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {12 * width / 13, width, width, 12 * height / 13, 12 * height / 13};
+                int[] y = {7 * height / 16, 3 * height / 8, 5 * height / 8, 9 * height / 16, 7 * height / 16};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(width, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow + 2, locationCol + 3, maze.maze2) || maze.maze2[locationRow + 2][locationCol + 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {9 * width / 13, 10 * width / 13, 10 * width / 13, 9 * height / 13, 9 * height / 13};
+                int[] y = {7 * height / 16, 3 * height / 8, 5 * height / 8, 9 * height / 16, 7 * height / 16};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(10 * width / 13, 3 * height / 8, 2 * width / 13, height / 4);
+            }
 
+            // Tier 2 Wierdos
+            if (!Maze.inBounds(locationRow - 2, locationCol + 2, maze.maze2) || maze.maze2[locationRow - 2][locationCol + 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {0, 3 * width / 13, 3 * width / 13, 0, 0};
+                int[] y = {height / 4, 3 * height / 8, 5 * height / 8, 3 * height / 4, height / 4};
+                g.fillPolygon(x, y, 5);
+            }
+            if (!Maze.inBounds(locationRow + 2, locationCol + 2, maze.maze2) || maze.maze2[locationRow + 2][locationCol + 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {10 * width / 13, width, width, 10 * height / 13, 10 * height / 13};
+                int[] y = {3 * height / 8, height / 4, 3 * height / 4, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+            }
+            
+
+            // Tier 3 Normals
+            if (!Maze.inBounds(locationRow, locationCol + 3, maze.maze2) || maze.maze2[locationRow][locationCol + 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                g.fillRect(width/2 - 3 * width / 26, height / 2 - height / 8, 3 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow - 1, locationCol + 3, maze.maze2) || maze.maze2[locationRow - 1][locationCol + 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {5 * width / 13, 6 * width / 13, 6 * width / 13, 5 * width / 13, 5 * width / 13};
+                int[] y = {3 * height / 8, 7 * height / 16, 9 * height / 16, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(3 * width / 13, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+            if (!Maze.inBounds(locationRow + 1, locationCol + 3, maze.maze2) || maze.maze2[locationRow + 1][locationCol + 3] == 0) {
+                g.setColor(new Color(50, 50, 50));
+                int[] x = {7 * width / 13, 8 * width / 13, 8 * width / 13, 7 * width / 13, 7 * width / 13};
+                int[] y = {7 * height / 16, 3 * height / 8, 5 * height / 8, 9 * height / 16, 7 * height / 16};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(10 * width / 13, 3 * height / 8, 2 * width / 13, height / 4);
+            }
+
+            // Tier 2 Normals
+            if (!Maze.inBounds(locationRow, locationCol + 2, maze.maze2) || maze.maze2[locationRow][locationCol + 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                g.fillRect(3 * width / 13, height / 4, 7 * width / 13, height / 2);
+            }
+            if (!Maze.inBounds(locationRow - 1, locationCol + 2, maze.maze2) || maze.maze2[locationRow - 1][locationCol + 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {3 * width / 13, 5 * width / 13, 5 * width / 13, 3 * width / 13, 3 * width / 13};
+                int[] y = {height / 4, 3 * height / 8, 5 * height / 8, 3 * height / 4, height / 4};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(0, height / 4, 3 * width / 13, height / 2);
+            }
+            if (!Maze.inBounds(locationRow + 1, locationCol + 2, maze.maze2) || maze.maze2[locationRow + 1][locationCol + 2] == 0) {
+                g.setColor(new Color(100, 100, 100));
+                int[] x = {8 * width / 13, 10 * width / 13, 10 * width / 13, 8 * height / 13, 8 * height / 13};
+                int[] y = {3 * height / 8, height / 4, 3 * height / 4, 5 * height / 8, 3 * height / 8};
+                g.fillPolygon(x, y, 5);
+                g.fillRect(10 * width / 13, height / 4, 3 * height / 13, height / 2);
+            }
+
+            // Tier 1 Normals
+            if (!Maze.inBounds(locationRow, locationCol - 1, maze.maze2) || maze.maze2[locationRow][locationCol - 1] == 0) {
+                g.setColor(new Color(150, 150, 150));
+                g.fillRect(0, 0, width, height);
+            }
+            if (!Maze.inBounds(locationRow - 1, locationCol - 1, maze.maze2) || maze.maze2[locationRow - 1][locationCol - 1] == 0) {
+                g.setColor(new Color(150, 150, 150));
+                int[] x = {0, 3 * width / 13, 3 * width / 13, 0, 0};
+                int[] y = {0, height / 4, 3 * height / 4, height, 0};
+                g.fillPolygon(x, y, 5);
+            }
+            if (!Maze.inBounds(locationRow + 1, locationCol - 1, maze.maze2) || maze.maze2[locationRow + 1][locationCol - 1] == 0) {
+                g.setColor(new Color(150, 150, 150));
+                int[] x = {10 * width / 13, width, width, 10 * width / 13, 10 * width / 13};
+                int[] y = {height / 4, 0, height, 3 * height / 4, height / 4};
+                g.fillPolygon(x, y, 5);
+            }
+
+
+            
         }
 
     }
