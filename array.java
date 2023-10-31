@@ -23,5 +23,12 @@ public class Array {
         return new int[] { -1, -1 };
     }
     
-    public static boolean inBounds
+    public static boolean inBounds(int row, int col, int[][] array) {
+
+        if (row < 0 || col < 0) return false;
+        if (array.length - 1 < row || array[0].length - 1 < col) return false;
+
+        return true;
+
+    }
 }
